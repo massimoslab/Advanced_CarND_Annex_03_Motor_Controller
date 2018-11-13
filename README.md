@@ -42,9 +42,6 @@ The **Serial.println("Hello, world!")** sends the text *Hello World!* to the ser
 The Arduino can be purchased from the following link:
 [Purchase an Arduino here](https://store.arduino.cc/)
 
-The Arduino IDE can be downloaded from the following link:
-[Download the Arduino IDE here](https://www.arduino.cc/en/Main/Software)
-
 ## Author
 
 **Massimo Passamonti**: [email me](me@massimoslab.com)
