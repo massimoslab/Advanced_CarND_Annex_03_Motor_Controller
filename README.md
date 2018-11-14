@@ -1,6 +1,6 @@
 [image1]: ./images/motor_controller.jpg
 
-# Annex 03 : Motor Controller
+# Annex 04 : Motor Controller
 
 As mentioned in Annex 01 and Annex 02, it is possible to connect motors directly to the pins of either an Arduino or a Raspberry Pi. The big issue with this solution is that the current that you can provide to the motor is limited to the current that the Arduino or the Raspberry Pi can provide and this limits a lot the motors that you can use. More specifically if you need to use a motor that requires higher voltage (9 volts for example), the you need to use a so-called motor controller.
 
