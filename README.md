@@ -120,7 +120,8 @@ The **steeringServo.write()** function sends the steering angle value to the ser
 
 ## 05. Purchases
 
-L298N motor controller can be purchased online on the major online stores.
+L298N motor controller can be purchased online on the major online stores. I have purchased mine from ebay:
+[Purchase a car chassis here](https://store.arduino.cc/)
 
 ## Author
 
