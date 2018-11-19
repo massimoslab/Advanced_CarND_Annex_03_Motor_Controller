@@ -13,7 +13,6 @@ void setup() {
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
   steeringServo.attach(servoPIN);
-  steeringServo.write(90);
 }
 
 int step_total = 20;
@@ -46,7 +45,6 @@ void loop() {
     step_count += 1;
     delay(500);
   }
-
 
   while(step_count > 0) {
     analogWrite(enA, throttle_val);

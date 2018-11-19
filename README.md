@@ -23,11 +23,24 @@ An Arduino on the other hand has more than one PWM and is extremely stable when 
 
 ## 03. L298N Motor Controller assembly
 
+The assembly and connection of the L298N motor controller to the Arduino Micro and to the car chassis is relatively simple. Refer to the below schematic for the details:
+
 ![alt text][image2]
+
+First, start by connecting the car's motor and steering servo to the H-bridge. Secondly, add an external power sources here represented by a 9V battery. Please notice that any power source between 6V and 12V works with the motor. Thirdly, connect the Arduino Micro to the H-bridge using pin 6, pin 7 and pin 8 and to the steering servo through pin 10.
 
 ## 04. L298N Motor Controller Arduino code
 
-What things you need to install the software and how to install them
+Below is a simple Arduino code that once uploaded to the Arduino Micro will activate the motor and the steering servo.
+
+There are two loops in the code. The first loop will increase through different steps:
+1. the throttle of the motors from zero to full throttle; and
+2. the steering angle from left to right.
+
+The second loop will decrease through different steps:
+1. the throttle of the motors from full to zero throttle; and
+2. the steering angle from right to left.
+
 
 ```
 #include <Servo.h>
@@ -45,7 +58,6 @@ void setup() {
   pinMode(in1, OUTPUT);
   pinMode(in2, OUTPUT);
   steeringServo.attach(servoPIN);
-  steeringServo.write(90);
 }
 
 int step_total = 20;
@@ -96,14 +108,19 @@ void loop() {
 
 #### Understanding the code
 
-The **void setup()** function is run first with its content between brackets. The **Serial.begin(9600)** sets up the speed of the serial port to 9600 baud. The baud setting in the serial monitor window must match this value so that the Arduino and serial monitor window are communicating at the same speed.
+In the **void setup()** function we set up the speed of the serial port to 9600 baud, we connect the motor to the appropriate pins (pin 6, 7 and 8), and we connect the servo to its pin (pin 10).
 
-The **void loop()** function is run second with all its content between brackets.
-The **Serial.println("Hello, world!")** sends the text *Hello World!* to the serial / USB port for display in the serial monitor window.
+Before the **void loop()** function we define a series of variables that are later used to determine the increases of the throttle and of the steering angle.
 
-## 05. Purchases and Downloads
-The Arduino can be purchased from the following link:
-[Purchase an Arduino here](https://store.arduino.cc/)
+In the **void loop()** function we send the signal to the motor and to the steering servo.
+
+The **analogWrite()** function send the throttle value to the motor. The two **digitalWrite()** functions determine the rotational direction of the motor.
+
+The **steeringServo.write()** function sends the steering angle value to the servo.
+
+## 05. Purchases
+
+L298N motor controller can be purchased online on the major online stores.
 
 ## Author
 
